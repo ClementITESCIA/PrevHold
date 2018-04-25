@@ -1,7 +1,10 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+
+// describe blocs définissant des suite de tests et chaque bloc est pour un test unitaire
 describe('AppComponent', () => {
+//beforeEach s'exécute avant chaque test et est utilisé pour la partie setup d'un test
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
