@@ -1,0 +1,120 @@
+<div class="sidebar">
+  <div class="logo">
+    <img src="assets/img/logo_Projet_4.png" width="130px">
+    <p>{{title}}</p>
+  </div>
+
+<div class="nav">
+  <div class="nav-item">
+    <img src="assets/img/chart.png">
+    <p>Dashboard</p>
+  </div>
+
+  <div class="nav-item">
+    <img src="assets/img/calendar.png">
+    <p>Planning aide-soignante</p>
+  </div>
+
+  <div class="nav-item">
+    <img src="assets/img/stats.png">
+    <p>Fiche de Suivi</p>
+  </div>
+
+  <div class="nav-item">
+    <img src="assets/img/doctor.png">
+    <p>Profil Médical</p>
+  </div>
+</div>
+</div>
+
+<div class="header">
+  <div class="header-nav">
+    <img src="assets/img/logout.png">
+    <img src="assets/img/bell.png">
+    <img src="assets/img/mail.png">
+  </div>
+</div>
+
+<mat-card class="card1">
+  <div class="border">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image">
+        <img src="assets/img/shower.png"/>
+      </div>
+      <mat-card-title class="titre">Fréquence de prises de douche</mat-card-title>
+    </mat-card-header>
+  </div>
+  <div>
+    <canvas id="lineChart" width="740" height="400">{{LineChart}}</canvas>
+  </div>
+</mat-card>
+
+<mat-card class="card2">
+  <div class="border">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image">
+        <img src="assets/img/entrance.png"/>
+      </div>
+      <mat-card-title class="titre">Porte d'entrée de la maison</mat-card-title>
+    </mat-card-header>
+  </div>
+  <div>
+    <canvas id="barChart" width="740" height="400">{{BarChart}}</canvas>
+  </div>
+</mat-card>
+
+<mat-card class="card3">
+  <div class="border">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image">
+        <img src="assets/img/smoke-detector.png"/>
+      </div>
+      <mat-card-title class="titre">Détection de fumée/gaz</mat-card-title>
+    </mat-card-header>
+  </div>
+  <div>
+    <canvas width="740" height="400"></canvas>
+  </div>
+</mat-card>
+
+<mat-card class="card4">
+  <div class="border">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image">
+        <img src="assets/img/person-falling.png"/>
+      </div>
+      <mat-card-title class="titre">Détection de chute</mat-card-title>
+    </mat-card-header>
+  </div>
+  <div>
+    <canvas width="740" height="400"></canvas>
+  </div>
+</mat-card>
+
+<mat-card class="card5">
+  <div class="border">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image">
+        <img src="assets/img/smart-tv.png"/>
+      </div>
+      <mat-card-title class="titre">Loisir : utilisation de la Télévision</mat-card-title>
+    </mat-card-header>
+  </div>
+  <div>
+    <canvas id="lineChart1" width="740" height="400">{{LineChart1}}</canvas>
+  </div>
+</mat-card>
+
+<mat-card class="card6">
+  <div class="border">
+    <mat-card-header>
+      <div mat-card-avatar class="header-image">
+        <img src="assets/img/shutter.png"/>
+      </div>
+      <mat-card-title class="titre">Ouverture des volets</mat-card-title>
+    </mat-card-header>
+  </div>
+  <div>
+    <canvas width="740" height="400"></canvas>
+  </div>
+</mat-card>

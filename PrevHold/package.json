@@ -23,7 +23,10 @@
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
+    "bootstrap": "^4.1.0",
+    "chart.js": "^2.7.2",
     "core-js": "^2.4.1",
+    "ngx-toastr": "^8.4.0",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },
@@ -43,6 +46,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "sonarlint": "^1.1.0",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
     "typescript": "~2.5.3"
