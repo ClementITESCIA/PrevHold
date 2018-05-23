@@ -1,25 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 
-import { MaterialModule } from './material.module';
 
-import { AppRoutingModule, routingComponents } from './app-routing.module';
-import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    routingComponents,
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    MaterialModule,
-    AppRoutingModule,
-    FormsModule
+    MDBBootstrapModule.forRoot()
   ],
+  schemas: [NO_ERRORS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -1,19 +1,10 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-//import { AuthService } from './../auth/auth.service';
 
 @Component({
-  selector: 'PT-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.less']
+  styleUrls: ['./app.component.scss']
 })
-
-export class AppComponent{
-
-  constructor(
-  ){}
-
-  ngOnInit() {
-  }
-  
+export class AppComponent {
+  title = 'app';
 }
