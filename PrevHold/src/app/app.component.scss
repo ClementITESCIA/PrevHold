@@ -48,6 +48,14 @@
   font-size: 20px;
 }
 
+.fa-envelope {
+  position: relative;
+  top: 20px;
+  margin-left: 15px;
+  color: #ffffff;
+  font-size: 20px;
+}
+
 .nav-item2 {
   position: relative;
   top: 10px;
@@ -57,22 +65,4 @@
 .footer-copyright {
   font-family: 'Montserrat';
   font-size: 16px;
-}
-
-.card-title {
-  position: relative;
-  top: -30px;
-  padding-left: 80px;
-  text-transform: uppercase;
-  font-family: 'Montserrat';
-  letter-spacing: 1px;
-}
-
-.card-image {
-  padding-left: 25px;
-  padding-top: 25px;
-}
-
-.border-bottom{
-    border-bottom: 1px solid #E5E5E5;
 }
