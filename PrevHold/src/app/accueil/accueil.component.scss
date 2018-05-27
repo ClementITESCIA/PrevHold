@@ -7,8 +7,27 @@
   padding-top: 35px;
 }
 
+.border-line{
+  margin-top: 50px;
+}
+
 .text-box {
   padding-left: 30px;
+}
+
+.text-attribut{
+  text-transform: uppercase;
+  color: #3F729B;
+}
+
+.text-prenom{
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.text-contact{
+  font-weight: bold;
 }
 
 .fa-pie-chart {
@@ -24,4 +43,13 @@
 .fa-money {
   font-size: 35px;
   color: #3F729B;
+}
+
+.fa-paper-plane-o{
+  margin-right: 10px;
+}
+
+.photo{
+  border-radius: 50%;
+  box-shadow: 1px 1px 12px #555555;
 }
