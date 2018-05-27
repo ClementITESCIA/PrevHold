@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanningComponent } from './planning/planning.component';
 import { FicheComponent } from './fiche/fiche.component';
 import { ProfilComponent } from './profil/profil.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ProfilComponent } from './profil/profil.component';
     DashboardComponent,
     PlanningComponent,
     FicheComponent,
-    ProfilComponent
+    ProfilComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,7 @@
   <!-- Barre de Navigation -->
   <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
       <logo>
-        <a class="navbar-brand" href="http://localhost:4200/">
+        <a routerLink="accueil" class="navbar-brand">
           <img src="assets/logo_Projet_4.png" class="logo">
           <div class="nom mr-auto">
             PrevHold
@@ -41,19 +41,22 @@
       </links>
   </mdb-navbar>
   <!-- Fin de la barre de Navigation -->
+
 </header>
 
 <main>
   <div class="container-fluid">
     <router-outlet></router-outlet>
   </div>
+
+
 </main>
 
 <!-- Bas de page -->
 <footer class="page-footer unique-color center-on-small-only mt-4">
   <!-- Copyright -->
   <div class="footer-copyright unique-color center-on-small-only text-center py-3">© 2018 Copyright :
-    <a href=""> PrevHold</a>
+    <a href=""> PrevHold</a>. All right reserved.
   </div>
   <!-- Copyright -->
 </footer>
