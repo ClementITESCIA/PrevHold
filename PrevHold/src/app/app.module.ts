@@ -11,6 +11,7 @@ import { PlanningComponent } from './planning/planning.component';
 import { FicheComponent } from './fiche/fiche.component';
 import { ProfilComponent } from './profil/profil.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { ConnexionComponent } from './connexion/connexion.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { AccueilComponent } from './accueil/accueil.component';
     PlanningComponent,
     FicheComponent,
     ProfilComponent,
-    AccueilComponent
+    AccueilComponent,
+    ConnexionComponent
   ],
   imports: [
     BrowserModule,
