@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent implements OnInit {
+  latitude = 49.041223;
+  longitude = 2.029123;
 
   constructor() { }
 

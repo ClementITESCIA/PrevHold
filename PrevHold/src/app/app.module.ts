@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AgmCoreModule } from '@agm/core';
 
 import { routes } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { ContactComponent } from './contact/contact.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanningComponent } from './planning/planning.component';
 import { FicheComponent } from './fiche/fiche.component';
@@ -15,7 +16,6 @@ import { AccueilComponent } from './accueil/accueil.component';
 @NgModule({
   declarations: [
     AppComponent,
-    ContactComponent,
     DashboardComponent,
     PlanningComponent,
     FicheComponent,
@@ -25,7 +25,10 @@ import { AccueilComponent } from './accueil/accueil.component';
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    routes
+    routes,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBdFJtzibaf1vpgryV4Od9hwXo-giGWZk0'
+    })
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],
