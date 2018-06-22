@@ -28,9 +28,9 @@ import { ConnexionComponent } from './connexion/connexion.component';
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     routes,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBdFJtzibaf1vpgryV4Od9hwXo-giGWZk0'
-    })
+    /*AgmCoreModule.forRoot({
+      apiKey:
+    })*/
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [],

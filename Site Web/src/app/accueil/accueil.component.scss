@@ -1,4 +1,13 @@
-.img-fluid{
+.titre {
+  font-weight: bold;
+  text-align: center;
+}
+
+.texte-box {
+  text-align: center;
+}
+
+.img-fluid {
   border-radius: 10px;
   box-shadow: 1px 1px 12px #555555;
 }
@@ -7,28 +16,33 @@
   padding-top: 35px;
 }
 
+.texte2-box {
+  padding-left: 30px;
+}
+
+.titre-avantage {
+  font-weight: bold;
+}
+
 .border-line{
   margin-top: 50px;
 }
 
-.text-box {
-  padding-left: 30px;
+.team-section {
+  text-align: center;
 }
 
-.text-attribut{
+.texte-attribut{
   text-transform: uppercase;
   color: #3F729B;
 }
 
-.text-prenom{
+.texte-prenom{
   margin-top: 20px;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-.text-contact{
-  font-weight: bold;
-}
 
 .fa-pie-chart {
   font-size: 35px;
