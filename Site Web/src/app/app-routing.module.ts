@@ -15,7 +15,7 @@ export const router: Routes = [
     { path: 'dashboard', component: DashboardComponent },
     { path: 'planning_as', component: PlanningComponent },
     { path: 'fiche_suivi', component: FicheComponent },
-    { path: 'profil_med', component: ProfilComponent },
+    //{ path: 'profil_med', component: ProfilComponent },
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(router);
