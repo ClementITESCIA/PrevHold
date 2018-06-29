@@ -4,6 +4,8 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AgmCoreModule } from '@agm/core';
 
 import { routes } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -28,6 +30,8 @@ import { ConnexionComponent } from './connexion/connexion.component';
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     routes,
+    FormsModule,
+    HttpClientModule
     /*AgmCoreModule.forRoot({
       apiKey:
     })*/
