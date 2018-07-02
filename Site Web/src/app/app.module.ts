@@ -5,6 +5,7 @@ import { AgmCoreModule } from '@agm/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { routes } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -21,14 +22,15 @@ import { ApiPrevHoldService } from './api-prev-hold.service';
     PlanningComponent,
     FicheComponent,
     AccueilComponent,
-    ConnexionComponent
+    ConnexionComponent,
 
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     routes,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
     /*AgmCoreModule.forRoot({
       apiKey:
     })*/
