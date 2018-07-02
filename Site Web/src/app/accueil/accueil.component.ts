@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { HttpErrorResponse } from '@angular/common/http'
+import { ApiPrevHoldService } from '../api-prev-hold.service';
 
 @Component({
   selector: 'app-accueil',
@@ -8,34 +7,40 @@ import { HttpErrorResponse } from '@angular/common/http'
   styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent implements OnInit {
-  public data: any=[]
   latitude = 49.041223;
   longitude = 2.029123;
+  result;
+  result1;
+  constructor(private api: ApiPrevHoldService) { }
 
   ngOnInit() {
+    this.getPrevhold();
+    //this.submitAdd(form);
   }
 
-  constructor(private http: HttpClient){
-  }
 
-  save(name, email, mobile, subject, message): void {
-    this.data['name']= name;
-                this.data['email']= email;
-                this.data['mobile']= mobile;
-                this.data['subject']= subject;
-                this.data['message']= message;
-    console.log(this.data);
-                //add request to send email or into mysql
-                this.http.put<any>('http://localhost/api/v1/update/', this.data).subscribe(
-        res => {
-          console.log(res);
-      },
-      (err: HttpErrorResponse) => {
-        if (err.error instanceof Error) {
-          console.log("Client-side error occured.");
-        } else {
-          console.log("Server-side error occurred.");
-        }
-      });
+  getPrevhold() {
+   this.api.getPrevhold()
+     .subscribe(
+       data => {
+         console.log(JSON.stringify(data));
+         this.result = data
+       },
+       err => console.log(JSON.stringify(err)),
+       () => console.log('error')
+     );
    }
+
+   /*submitAdd(form){
+     console.log(JSON.stringify(form));
+     this.api.submitAdd(form)
+     .subscribe(
+       data => {
+         console.log(JSON.stringify(data));
+         this.result1 = data
+       },
+       err => console.log(JSON.stringify(err)),
+       () => console.log('error')
+     );
+   }*/
 }
