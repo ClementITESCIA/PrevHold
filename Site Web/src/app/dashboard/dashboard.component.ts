@@ -56,17 +56,10 @@ export class DashboardComponent implements OnInit {
       labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
       datasets: [
         {
-          label: "Entrée",
-          data: [4, 7, 1, 3, 4, 5, 2],
-          backgroundColor: '#DE4141',
-          borderColor: '#E23232',
-          borderWidth: 1
-        },
-        {
           label: 'Sortie',
           data: [4, 6, 5, 6, 4, 5, 2],
-          backgroundColor: '#32AFE2',
-          borderColor: '#1D90BF',
+          backgroundColor: '#EC4F4F',
+          borderColor: '#EC4F4F',
           borderWidth: 1
         }
       ]

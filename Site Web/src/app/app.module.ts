@@ -30,10 +30,10 @@ import { ApiPrevHoldService } from './api-prev-hold.service';
     MDBBootstrapModule.forRoot(),
     routes,
     HttpClientModule,
-    FormsModule
-    /*AgmCoreModule.forRoot({
-      apiKey:
-    })*/
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBdFJtzibaf1vpgryV4Od9hwXo-giGWZk0'
+    })
   ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [

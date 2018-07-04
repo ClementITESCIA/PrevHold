@@ -4,7 +4,7 @@ import { OnInit } from '@angular/core';
 
 const url = 'http://127.0.0.1:3000/prevhold/';
 
-const HttpOptions = { 
+const HttpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
 };
 

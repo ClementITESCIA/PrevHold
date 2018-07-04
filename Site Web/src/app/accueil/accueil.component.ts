@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiPrevHoldService } from '../api-prev-hold.service';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-accueil',
@@ -14,6 +13,8 @@ export class AccueilComponent implements OnInit {
   longitude = 2.029123;
   result;
   contact_data;
+
+  @ViewChild('submitForm') public submitForm: any;
 
   constructor(private api: ApiPrevHoldService) { }
 
@@ -44,6 +45,8 @@ export class AccueilComponent implements OnInit {
        err => console.log(JSON.stringify(err)),
        () => console.log('error')
      );
+     alert(`Votre message a bien été envoyé !`);
+     this.submitForm.reset();
    }
 
 }

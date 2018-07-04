@@ -51,7 +51,7 @@
 
           <!-- Grid column -->
           <div class="texte2-box col-xl-10 col-md-11 col-10">
-            <h5 class="titre-avantage mb-3">{{result.toto}} Sûreté</h5>
+            <h5 class="titre-avantage mb-3">Sûreté</h5>
             <p class="grey-text">PrevHold apporte des réponses en assitant les occupants en perte d'autonomie avec des soins nécessaires
               et en les prévenant des risques avec nos aides technologiques et le passage des aides-soignantes à leur domicile.</p>
           </div>
@@ -159,24 +159,32 @@
 
           <div class="md-form">
             <i class="fa fa-user prefix grey-text"></i>
-            <input class="form-control" type="text" id="nom" name="nom" placeholder="Votre nom" ngModel>
-          </div>
-            <div [hidden]="nom.valid" class="alert alert-danger">
-            <div [hidden]="!nom.hasError('required')">Le nom est nécessaire</div>
+            <input mdbActive class="form-control"
+            type="text" id="nom" name="nom" ngModel>
+            <label for="nom">Votre nom</label>
           </div>
 
           <div class="md-form">
             <i class="fa fa-envelope prefix grey-text"></i>
-            <input type="email" id="email" name="email" class="form-control" placeholder="Votre email" pattern="emailPattern" ngModel>
+            <input mdbActive class="form-control"
+            type="email" id="email" name="email" ngModel>
+            <label for="email">Votre email</label>
           </div>
 
           <div class="md-form">
             <i class="fa fa-pencil prefix grey-text"></i>
-            <textarea type="text" id="message" name="message" class="md-textarea" placeholder="Votre message" maxlength="250" ngModel></textarea>
+            <textarea mdbActive class="md-textarea form-control"
+            type="text" id="message" name="message" maxlength="250" ngModel></textarea>
+            <label for="message">Votre message</label>
           </div>
 
+
           <div class="text-center">
-            <input type="submit" value="Envoyer" class="btn btn-unique">
+            <input type="submit" [disabled]="!submitForm.value.nom ||
+            !submitForm.value.email ||
+            !submitForm.value.message"
+            value="Envoyer"
+            class="btn btn-unique">
           </div>
 
         </form>
