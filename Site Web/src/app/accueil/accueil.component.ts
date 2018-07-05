@@ -19,10 +19,10 @@ export class AccueilComponent implements OnInit {
   constructor(private api: ApiPrevHoldService) { }
 
   ngOnInit() {
-    this.getPrevhold();
+    //this.getPrevhold();
   }
 
-  getPrevhold() {
+  /*getPrevhold() {
    this.api.getPrevhold()
      .subscribe(
        data => {
@@ -32,7 +32,7 @@ export class AccueilComponent implements OnInit {
        err => console.log(JSON.stringify(err)),
        () => console.log('error')
      );
-   }
+   }*/
 
    submitAdd(form){
      console.log(JSON.stringify(form));

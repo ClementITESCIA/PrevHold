@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 mt-4">
+      <div class="card">
+        <div class="card-body mx-4">
+          <!--Header-->
+          <div class="text-center">
+              <h3 class="dark-grey-text mb-5"><strong>Mot de passe oublié ?</strong></h3>
+          </div>
+
+          <form (ngSubmit)="mdpAdd(mdpForm.value)" #mdpForm="ngForm">
+            <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input mdbActive class="form-control"
+                type="email" id="email" name="email" ngModel>
+                <label for="email">Email</label>
+            </div>
+
+            <div class="text-center mb-3">
+              <input type="submit" [disabled]="!mdpForm.value.email"
+              value="Envoyer"
+              class="btn btn-unique">
+            </div>
+
+            <div class="mb-3">
+              <input routerLink="" type="submit"
+              value="Retour"
+              class="retour btn unique-color">
+            </div>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

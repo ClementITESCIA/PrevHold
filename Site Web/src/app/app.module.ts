@@ -7,6 +7,8 @@ import { HttpModule } from '@angular/http';
 import { routes } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 
+
+
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PlanningComponent } from './planning/planning.component';
@@ -14,6 +16,8 @@ import { FicheComponent } from './fiche/fiche.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { ApiPrevHoldService } from './api-prev-hold.service';
+import { MdpoublieComponent } from './mdpoublie/mdpoublie.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +27,8 @@ import { ApiPrevHoldService } from './api-prev-hold.service';
     FicheComponent,
     AccueilComponent,
     ConnexionComponent,
+    MdpoublieComponent,
+    InscriptionComponent,
 
   ],
   imports: [

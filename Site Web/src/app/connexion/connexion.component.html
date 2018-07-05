@@ -8,32 +8,37 @@
               <h3 class="dark-grey-text mb-5"><strong>Se connecter à PrevHold</strong></h3>
           </div>
 
-          <div class="md-form">
-              <i class="fa fa-envelope prefix grey-text"></i>
-              <input mdbActive class="form-control"
-              type="text" id="email" name="email">
-              <label for="email">Email</label>
-          </div>
+          <form (ngSubmit)="connexionAdd(connexionForm.value)" #connexionForm="ngForm">
+            <div class="md-form">
+                <i class="fa fa-envelope prefix grey-text"></i>
+                <input mdbActive class="form-control"
+                type="email" id="email" name="email" ngModel>
+                <label for="email">Email</label>
+            </div>
 
-          <div class="md-form">
-              <i class="fa fa-key prefix grey-text"></i>
-              <input mdbActive class="form-control"
-              type="password" id="mdp" name="mdp">
-              <label for="mdp">Mot de passe</label>
-          </div>
+            <div class="md-form">
+                <i class="fa fa-key prefix grey-text"></i>
+                <input mdbActive class="form-control"
+                type="password" id="motDePasse" name="motDePasse" ngModel>
+                <label for="motDePasse">Mot de passe</label>
+            </div>
 
-          <div class="text-center mb-3">
-              <button type="button" class="btn btn-unique btn-block btn-rounded z-depth-1a">Sign in</button>
-          </div>
+            <div class="text-center mb-3">
+              <input type="submit" [disabled]="!connexionForm.value.email ||
+              !connexionForm.value.motDePasse"
+              value="Se connecter"
+              class="btn btn-unique" routerLink="dashboard">
+            </div>
+          </form>
 
           <div class="md-form pb-3">
-              <a href="#" class="blue-text d-flex justify-content-end"> Mot de passe oublié ?</a>
+              <a routerLink="mdp_forget" class="blue-text d-flex justify-content-end"> Mot de passe oublié ?</a>
           </div>
 
         </div>
 
         <div class="modal-footer mx-5 pt-3 mb-1">
-            <p class="font-small grey-text d-flex justify-content-end">Vous n'êtes pas un membre de PrevHold ? <a href="#" class="blue-text ml-1"> S'inscrire</a></p>
+            <p class="font-small grey-text d-flex justify-content-end">Vous n'êtes pas un membre de PrevHold ? <a routerLink="inscription" class="blue-text ml-1"> S'inscrire</a></p>
         </div>
 
       </div>
