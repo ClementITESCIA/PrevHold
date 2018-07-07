@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ApiPrevHoldService } from '../api-prev-hold.service';
+
 
 @Component({
   selector: 'app-connexion',
@@ -11,5 +13,4 @@ export class ConnexionComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

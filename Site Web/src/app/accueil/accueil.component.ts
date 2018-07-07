@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiPrevHoldService } from '../api-prev-hold.service';
-import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-accueil',
@@ -15,13 +14,15 @@ export class AccueilComponent implements OnInit {
   result;
   contact_data;
 
+  @ViewChild('submitForm') public submitForm: any;
+
   constructor(private api: ApiPrevHoldService) { }
 
   ngOnInit() {
-    this.getPrevhold();
+    //this.getPrevhold();
   }
 
-  getPrevhold() {
+  /*getPrevhold() {
    this.api.getPrevhold()
      .subscribe(
        data => {
@@ -31,7 +32,7 @@ export class AccueilComponent implements OnInit {
        err => console.log(JSON.stringify(err)),
        () => console.log('error')
      );
-   }
+   }*/
 
    submitAdd(form){
      console.log(JSON.stringify(form));
@@ -44,6 +45,8 @@ export class AccueilComponent implements OnInit {
        err => console.log(JSON.stringify(err)),
        () => console.log('error')
      );
+     alert(`Votre message a bien été envoyé !`);
+     this.submitForm.reset();
    }
 
 }

@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8 mt-4">
+      <div class="card" style="margin-bottom:75px;">
+        <div class="card-body mx-4">
+          <!--Header-->
+          <div class="text-center">
+              <h3 class="dark-grey-text mb-5"><strong>Inscription</strong></h3>
+          </div>
+
+          <form (ngSubmit)="inscriptionAdd(inscriptionForm.value)" #inscriptionForm="ngForm">
+            <div class="md-form">
+                <input mdbActive class="form-control"
+                type="texte" id="nom" name="nom" ngModel>
+                <label for="nom">Nom</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive class="form-control"
+                type="texte" id="prenom" name="prenom" ngModel>
+                <label for="prenom">Prénom</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive class="form-control"
+                type="texte" id="email" name="email" ngModel>
+                <label for="email">Email</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive class="form-control"
+                type="texte" id="confirmation" name="confirmation" ngModel>
+                <label for="confirmation">Confirmation Email</label>
+            </div>
+
+            <label>Vous êtes :</label>
+
+            <div class="md-form">
+              <select class="form-control" id="choix" name="choix" ngModel>
+                <option value="1">Proche</option>
+                <option value="2">Aide-soignante</option>
+              </select>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive class="form-control"
+                type="texte" id="nom_pagee" name="nom_pagee" ngModel>
+                <label for="nom_pagee">Nom de la personne âgée</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive class="form-control"
+                type="texte" id="prenom_pagee" name="prenom_pagee" ngModel>
+                <label for="prenom_pagee">Prenom de la personne âgée</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive class="form-control"
+                type="texte" id="adresse" name="adresse" ngModel>
+                <label for="adresse">Adresse de la personne âgée</label>
+            </div>
+
+            <div class="md-form">
+                <input mdbActive class="form-control"
+                type="texte" id="ville" name="ville" ngModel>
+                <label for="ville">Ville de personne âgée</label>
+            </div>
+
+            <div class="text-center mb-3">
+              <input routerLink="" type="submit"
+              value="Retour"
+              class="retour btn unique-color">
+
+              <input type="submit" [disabled]="!inscriptionForm.value.nom ||
+              !inscriptionForm.value.prenom || !inscriptionForm.value.email ||
+              !inscriptionForm.value.confirmation || !inscriptionForm.value.choix"
+              value="S'inscrire"
+              class="btn btn-unique">
+            </div>
+
+          </form>
+
+      </div>
+    </div>
+  </div>
+</div>
