@@ -11,11 +11,7 @@ void setup() {
   
   pinMode(ledPin, OUTPUT);
   pinMode(pirPin, INPUT);
- 
   digitalWrite(ledPin, LOW);
-  
-  
-  
 }
 
 void loop() {
