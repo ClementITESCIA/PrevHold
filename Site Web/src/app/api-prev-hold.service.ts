@@ -28,5 +28,4 @@ export class ApiPrevHoldService {
   inscriptionAdd(form){
     return this.http.post(url, form, HttpOptions);
   }
-
 }

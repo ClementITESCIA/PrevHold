@@ -6,7 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { routes } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-
+import { ApiPrevHoldService } from './api-prev-hold.service';
 
 
 import { AppComponent } from './app.component';
@@ -15,7 +15,6 @@ import { PlanningComponent } from './planning/planning.component';
 import { FicheComponent } from './fiche/fiche.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { ConnexionComponent } from './connexion/connexion.component';
-import { ApiPrevHoldService } from './api-prev-hold.service';
 import { MdpoublieComponent } from './mdpoublie/mdpoublie.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 
