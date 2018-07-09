@@ -1,107 +1,68 @@
 <div class="container-fluid">
-  <!-- Section: Features v.3 -->
   <section class="section-propos">
 
-    <!-- Section heading -->
     <h2 class="titre my-5">PrevHold, Qu'est-ce que c'est ?</h2>
-    <!-- Section description -->
+
     <p class="texte-box lead grey-text mx-auto mb-5">Une application de prévention de risques et de suivi médical.</p>
 
-    <!-- Grid row -->
     <div class="row">
 
-      <!-- Grid column -->
       <div class="col-lg-5">
         <img class="img-fluid animated fadeInLeft" src="assets/personne.png">
       </div>
-      <!-- Grid column -->
 
-      <!-- Grid column -->
       <div class="box col-lg-7">
-
-        <!-- Grid row -->
         <div class="row mb-3">
-
-          <!-- Grid column -->
           <div class="col-1">
             <i class="fa fa-pie-chart fa-lg"></i>
           </div>
-          <!-- Grid column -->
 
-          <!-- Grid column -->
           <div class="texte2-box col-xl-10 col-md-11 col-10">
             <h5 class="titre-avantage mb-3">Suivi</h5>
             <p class="grey-text">PrevHold permet de visualiser des statistiques sur les séniors.
               <br>Ces statistiques sont dues à des données relevées par l'action de l'individu.
             </p>
           </div>
-          <!-- Grid column -->
-
         </div>
-        <!-- Grid row -->
 
-        <!-- Grid row -->
         <div class="row mb-3">
-
-          <!-- Grid column -->
           <div class="col-1">
             <i class="fa fa-smile-o fa-lg"></i>
           </div>
-          <!-- Grid column -->
 
-          <!-- Grid column -->
           <div class="texte2-box col-xl-10 col-md-11 col-10">
             <h5 class="titre-avantage mb-3">Sûreté</h5>
             <p class="grey-text">PrevHold apporte des réponses en assitant les occupants en perte d'autonomie avec des soins nécessaires
               et en les prévenant des risques avec nos aides technologiques et le passage des aides-soignantes à leur domicile.</p>
           </div>
-          <!-- Grid column -->
-
         </div>
-        <!-- Grid row -->
 
-        <!--Grid row-->
         <div class="row">
-
-          <!-- Grid column -->
           <div class="col-1">
             <i class="fa fa-money fa-lg"></i>
           </div>
-          <!-- Grid column -->
 
-          <!-- Grid column -->
           <div class="texte2-box col-xl-10 col-md-11 col-10">
             <h5 class="titre-avantage mb-3">Economie</h5>
             <p class="grey-text mb-0">Nous vous proposons un abonnement à 29,90€ afin de bénéficier de notre assistance,
               de maintenir vos aînés à leur domicile et ne pas payer les services des maisons de retraite.
             </p>
           </div>
-          <!-- Grid column -->
-
         </div>
-        <!--Grid row-->
 
       </div>
-      <!--Grid column-->
-
     </div>
-    <!-- Grid row -->
 
   </section>
-  <!-- Section: Features v.3 -->
 
   <hr class="border-line"/>
 
-  <!-- Section: Team v.1 -->
   <section class="team-section">
 
-    <!-- Section heading -->
     <h2 class="titre my-5">Notre équipe</h2>
 
-    <!-- Grid row -->
     <div class="row">
 
-      <!-- Grid column -->
       <div class="col-lg-4 mb-lg-0 mb-5">
         <div class="avatar">
           <img src="assets/clement.png" class="photo animated zoomIn">
@@ -111,9 +72,7 @@
         <p class="grey-text">Etudiant à ITESCIA de Cergy
           <br>Spécialité Management des SI et Digitalisation</p>
       </div>
-      <!-- Grid column -->
 
-      <!-- Grid column -->
       <div class="col-lg-4 mb-lg-0 mb-5">
         <div class="avatar">
           <img src="assets/nicolas.png" class="photo animated zoomIn">
@@ -123,9 +82,7 @@
         <p class="grey-text">Etudiant à ITESCIA de Cergy
           <br>Spécialité Réseaux et Systèmes</p>
       </div>
-      <!-- Grid column -->
 
-      <!-- Grid column -->
       <div class="col-lg-4 mb-md-0 mb-5">
         <div class="avatar">
           <img src="assets/victor.png" class="photo animated zoomIn">
@@ -135,27 +92,21 @@
         <p class="grey-text">Etudiant à ITESCIA de Cergy
           <br>Spécialité Management des SI et Digitalisation</p>
       </div>
-      <!-- Grid column -->
-
     </div>
-    <!-- Grid row -->
 
   </section>
-  <!-- Section: Team v.1 -->
 
   <hr class="border-line"/>
-
 </div>
 
 <div class="container">
-  <!-- Section: Team v.1 -->
   <section class="contact-section">
 
     <h2 class="font-weight-bold my-5 text-center">Contact</h2>
 
     <div class="row">
       <div class="col-lg-5 mb-lg-0 mb-4">
-        <form class="p-5" (ngSubmit)="submitAdd(submitForm.value)" #submitForm="ngForm">
+        <form class="p-5" (ngSubmit)="envoieContact(submitForm.value)" #submitForm="ngForm">
 
           <div class="md-form">
             <i class="fa fa-user prefix grey-text"></i>
@@ -191,8 +142,6 @@
       </div>
 
       <div class="col-lg-7 col-md-12">
-        <!-- Google map-->
-
         <agm-map [latitude]="latitude" [longitude]="longitude">
           <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
         </agm-map>
@@ -222,6 +171,4 @@
     </div>
 
   </section>
-  <!-- Section: Team v.1 -->
-
 </div>

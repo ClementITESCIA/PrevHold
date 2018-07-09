@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js';
+import { HttpClient } from '@angular/common/http';
+import { dataCapteur1 } from './dataPrevhold';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,24 +10,67 @@ import { Chart } from 'chart.js';
 })
 export class DashboardComponent implements OnInit {
 
-  LineChart: any;
-  BarChart: any;
-  LineChart1: any;
-  DoughnutChart_1: any;
-  DoughnutChart: any;
-  LineChart_1: any;
+  constructor(private http: HttpClient) {}
 
-  constructor() {}
+  lineChartDouche: any;
+  barChartSortie: any;
+  doughnutChartFumee: any;
+  doughnutChartChute: any;
+  lineChartTV: any;
+  lineChartVolets: any;
 
-  ngOnInit(){
-    this.LineChart = new Chart('lineChart', {
+  //----- Prise de douches ------
+  allData: Array<dataCapteur1> = [];
+  alljours = [];
+  alloccurrence = [];
+  //-----------------------------
+
+  sortieData(){
+    this.barChartSortie = new Chart('barChart', {
+      type: 'bar',
+      data: {
+        labels: this.alljours,
+        datasets: [
+          {
+            label: 'Sortie',
+            data: this.alloccurrence,
+            backgroundColor: '#EC4F4F',
+            borderColor: '#EC4F4F',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                // fonction pour la configuration de l'axe
+                userCallback: function(label) {
+                // quand il y a une même valeur (entier et décimal), le nombre entier est pris en compte
+                if (Math.floor(label) === label) {
+                  return label;
+                  }
+                },
+              }
+            }
+          ]
+        }
+      }
+    })
+  }
+
+  doucheData(){
+    this.lineChartDouche = new Chart('lineChart', {
     type: 'line',
     data: {
-      labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+      labels: this.alljours,
       datasets: [
           {
-              label: 'Nom de douches prises',
-              data: [2, 1, 0, 2, 0, 1, 3],
+              label: 'Nombre de douches prises',
+              data: this.alloccurrence,
               fill: false,
               backgroundColor: '#4BC0C0',
               borderColor: '#4BC0C0'
@@ -33,7 +78,7 @@ export class DashboardComponent implements OnInit {
         ]
     },
     options: {
-      responsive: false,
+      responsive: true,
       scales: {
         yAxes: [
           {
@@ -52,114 +97,94 @@ export class DashboardComponent implements OnInit {
       }
     }
   })
+}
 
-  this.BarChart = new Chart('barChart', {
-    type: 'bar',
-    data: {
-      labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
-      datasets: [
-        {
-          label: 'Sortie',
-          data: [1, 0, 3, 2, 3, 1, 4],
-          backgroundColor: '#EC4F4F',
-          borderColor: '#EC4F4F',
-          borderWidth: 1
-        }
-      ]
-    },
-    options: {
-      responsive: false,
-      scales: {
-        yAxes: [
+  fumeeData(){
+    this.doughnutChartFumee = new Chart('doughnutChart', {
+      type: 'doughnut',
+      data: {
+        labels: ['Avril', 'Mai', 'Juin', 'Juillet'],
+        datasets: [
           {
-            ticks: {
-              beginAtZero: true
-            }
+            data: [1, 3, 1, 1],
+            backgroundColor: ["#F7464A", "#F3AEAB", "#FDB45C", "#0349CA"],
+            borderColor: ["#F7464A", "#F3AEAB", "#FDB45C", "#0349CA"],
+            borderWidth: 1
           }
         ]
+      },
+      options: {
+        responsive: true,
       }
-    }
-  })
+    })
+  }
 
-  this.LineChart1 = new Chart('lineChart1', {
-    type: 'line',
-    data: {
-      labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
-      datasets: [
+  chuteData(){
+    this.doughnutChartChute = new Chart('doughnutChart_1', {
+      type: 'doughnut',
+      data: {
+        labels: ['Avril', 'Mai', 'Juin', 'Juillet'],
+        datasets: [
           {
-              label: 'Temps de visionnage de cette semaine',
-              data: [2, 4, 0, 3, 2, 1, 3],
-              fill: false,
-              backgroundColor: '#28D850',
-              borderColor: '#28D850'
-          },
-          {
-              label: 'Temps de visionnage de la semaine dernière',
-              data: [1, 2, 1, 2.3, 2.8, 1.4, 3.7],
-              fill: false,
-              backgroundColor: '#C674DE',
-              borderColor: '#C674DE'
+            data: [2, 1, 5, 2],
+            backgroundColor: ["#0349CA", "#F2F2F2", "#FF0000", "#E5CCFF"],
+            borderColor: ["#0349CA", "#F2F2F2", "#FF0000", "#E5CCFF"],
+            borderWidth: 1
           }
         ]
-    },
-    options: {
-      responsive: false,
-      scales: {
-        yAxes: [
-          {
-            ticks: {
-              beginAtZero: true,
-              // fonction pour la configuration de l'axe
-              userCallback: function(label) {
-              // quand il y a une même valeur (entier et décimal), le nombre entier est pris en compte
-              if (Math.floor(label) === label) {
-                return label;
-                }
-              },
-            }
-          }
-        ]
+      },
+      options: {
+        responsive: true,
       }
-    }
-  })
+    })
+  }
 
-  this.DoughnutChart = new Chart('doughnutChart', {
-    type: 'doughnut',
-    data: {
-      labels: ['Avril', 'Mai', 'Juin', 'Juillet'],
-      datasets: [
-        {
-          data: [1, 3, 1, 1],
-          backgroundColor: ["#F7464A", "#F3AEAB", "#FDB45C", "#0349CA"],
-          borderColor: ["#F7464A", "#F3AEAB", "#FDB45C", "#0349CA"],
-          borderWidth: 1
+  tvData(){
+    this.lineChartTV = new Chart('lineChart1', {
+      type: 'line',
+      data: {
+        labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
+        datasets: [
+            {
+                label: 'Temps de visionnage de cette semaine',
+                data: [2, 4, 0, 3, 2, 1, 3],
+                fill: false,
+                backgroundColor: '#28D850',
+                borderColor: '#28D850'
+            },
+            {
+                label: 'Temps de visionnage de la semaine dernière',
+                data: [1, 2, 1, 2.3, 2.8, 1.4, 3.7],
+                fill: false,
+                backgroundColor: '#C674DE',
+                borderColor: '#C674DE'
+            }
+          ]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+                // fonction pour la configuration de l'axe
+                userCallback: function(label) {
+                // quand il y a une même valeur (entier et décimal), le nombre entier est pris en compte
+                if (Math.floor(label) === label) {
+                  return label;
+                  }
+                },
+              }
+            }
+          ]
         }
-      ]
-    },
-    options: {
-      responsive: false,
-    }
-  })
+      }
+    })
+  }
 
-  this.DoughnutChart_1 = new Chart('doughnutChart_1', {
-    type: 'doughnut',
-    data: {
-      labels: ['Avril', 'Mai', 'Juin', 'Juillet'],
-      datasets: [
-        {
-          data: [2, 1, 5, 2],
-          backgroundColor: ["#0349CA", "#F2F2F2", "#FF0000", "#E5CCFF"],
-          borderColor: ["#0349CA", "#F2F2F2", "#FF0000", "#E5CCFF"],
-          borderWidth: 1
-        }
-      ]
-    },
-    options: {
-      responsive: false,
-    }
-  })
-
-    this.LineChart_1 = new Chart('lineChart_1', {
+  voletsData(){
+    this.lineChartVolets = new Chart('lineChart_1', {
     type: 'line',
     data: {
       labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
@@ -174,7 +199,7 @@ export class DashboardComponent implements OnInit {
         ]
     },
     options: {
-      responsive: false,
+      responsive: true,
       scales: {
         yAxes: [
           {
@@ -193,5 +218,24 @@ export class DashboardComponent implements OnInit {
       }
     }
   })
+  }
+
+  ngOnInit(){
+    this.http.get('http://localhost:3000/mesurejournaliere?capteurId=1')
+    .subscribe( resp => {
+      console.log(resp)
+      for(let i in resp){
+        this.allData.push(new dataCapteur1(resp[i].jour, resp[i].occurence));
+        this.alljours[i] = resp[i].jour;
+        this.alloccurrence[i] = resp[i].occurence;
+        console.log(this.alljours[i]);
+        this.doucheData();
+        this.sortieData();
+        this.fumeeData();
+        this.chuteData();
+        this.tvData();
+        this.voletsData();
+      }
+    })
   }
 }

@@ -22,21 +22,9 @@ export class AccueilComponent implements OnInit {
     //this.getPrevhold();
   }
 
-  /*getPrevhold() {
-   this.api.getPrevhold()
-     .subscribe(
-       data => {
-         console.log(JSON.stringify(data));
-         this.result = data
-       },
-       err => console.log(JSON.stringify(err)),
-       () => console.log('error')
-     );
-   }*/
-
-   submitAdd(form){
+   envoieContact(form){
      console.log(JSON.stringify(form));
-     this.api.submitAdd(form)
+     this.api.envoieContact(form)
      .subscribe(
        data => {
          console.log(JSON.stringify(data));

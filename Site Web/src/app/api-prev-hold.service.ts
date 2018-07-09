@@ -17,7 +17,7 @@ export class ApiPrevHoldService {
     return this.http.get(url);
   }*/
 
-  submitAdd(form){
+  envoieContact(form){
     return this.http.post(url, form, HttpOptions);
   }
 
