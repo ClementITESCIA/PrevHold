@@ -2,6 +2,10 @@ package guru.springframework.dto;
 
 import java.time.LocalDateTime;
 
+/**
+ * Entité représentant les mesures des capteurs agrégées par mois
+ *
+ */
 public class MensuelMesure {
 
     private int occurence;

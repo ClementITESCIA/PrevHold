@@ -3,6 +3,10 @@ package guru.springframework.dto;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Entité représentant les mesures des capteurs agrégées par jour
+ *
+ */
 public class JournaliereMesure {
 
     private int occurence;
@@ -11,7 +15,7 @@ public class JournaliereMesure {
 
     public static List<JournaliereMesure> demo(int capteurId){
         List<JournaliereMesure> mesures = new ArrayList<JournaliereMesure>(7);
-        JournaliereMesure lundi = new JournaliereMesure("Lundi", 3);
+        JournaliereMesure lundi = new JournaliereMesure("Lundi", 2);
         JournaliereMesure mardi = new JournaliereMesure("Mardi", 1);
         JournaliereMesure mercredi = new JournaliereMesure("Mercredi", 0);
         JournaliereMesure jeudi = new JournaliereMesure("Jeudi", 2);
@@ -28,6 +32,14 @@ public class JournaliereMesure {
         return mesures;
     }
 
+    /**
+     * Constructeur par défaut
+     *
+     * @param jour
+     *            Numéro du jour dans la semaine
+     * @param occurence
+     *            Nombre de mesures pour le jour de la semaine
+     */
     private JournaliereMesure(String jour, int occurence){
         this.jour = jour;
         this.occurence = occurence;

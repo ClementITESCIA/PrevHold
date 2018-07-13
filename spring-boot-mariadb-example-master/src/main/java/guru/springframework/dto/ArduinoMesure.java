@@ -1,10 +1,18 @@
 package guru.springframework.dto;
 
+/**
+ * Objet représentant les paramètres d'une mesure d'un capteur réalisée par l'Arduino.
+ *
+ */
 public class ArduinoMesure {
 
+    // Identifiant de l'arduino sur lequel est faite la mesure
     private int arduinoId;
+    // Nom de l'arduino
     private String arduinoNom;
+    // Identifiant du capteur attaché à l'arduino
     private int capteurId;
+    // valeur de la mesure du capteur
     private double valeur;
 
     public int getArduinoId() {
@@ -45,7 +53,5 @@ public class ArduinoMesure {
                 "arduinoId=" + arduinoId +
                 ", arduinoNom=" + arduinoNom +
                 ", capteurId=" + capteurId +
-                ", valeur=" + valeur +
-                '}';
-    }
+                ", valeur=" + valeur + '}';}
 }

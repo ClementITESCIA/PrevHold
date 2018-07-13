@@ -1,6 +1,8 @@
 package guru.springframework;
 
+import guru.springframework.domain.Contact;
 import guru.springframework.domain.Capteur;
+
 import guru.springframework.domain.Mesure;
 import guru.springframework.repositories.CapteurRepository;
 import guru.springframework.repositories.MesureRepository;

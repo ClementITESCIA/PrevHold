@@ -4,22 +4,15 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
+/**
+ * Entité persistante en base de données représentant la mesure du capteur d'un arduino
+ *
+ */
 @Entity
 public class Mesure {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
-    @Override
-    public String toString() {
-        return "Mesure{" +
-                "capteurId=" + id +
-                ", valeur=" + valeur +
-                ", unite='" + unite + '\'' +
-                ", date=" + date +
-                ", capteur=" + capteur +
-                '}';
-    }
 
     @Column
     @NotNull
@@ -69,4 +62,12 @@ public class Mesure {
     public void setCapteur(Capteur capteur) {
         this.capteur = capteur;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Mesure [id=%s, valeur=%s, unite=%s, date=%s, capteur=%s]", id, valeur, unite, date,
+                capteur);
+    }
+
+
 }
