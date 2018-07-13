@@ -12,5 +12,6 @@ public interface MesureRepository extends CrudRepository<Mesure, Integer> {
  group by DAYNAME(date)
  order by WEEKDAY(date)
      */
+
     //public JournaliereMesure getByCapteur(int capteurId, int seuil);
 }
