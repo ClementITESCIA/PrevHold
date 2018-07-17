@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { OnInit } from '@angular/core';
 
-const url = 'http://127.0.0.1:3000/prevhold/';
+const url = 'http://127.0.0.1:8080/back-prevhold/prevhold';
 
 const HttpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})

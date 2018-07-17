@@ -29,11 +29,11 @@ export class DashboardComponent implements OnInit {
     this.barChartSortie = new Chart('barChart', {
       type: 'bar',
       data: {
-        labels: this.alljours,
+        labels: ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'],
         datasets: [
           {
             label: 'Sortie',
-            data: this.alloccurrence,
+            data: [2, 3, 1, 0, 0, 0, 0],
             backgroundColor: '#EC4F4F',
             borderColor: '#EC4F4F',
             borderWidth: 1
@@ -147,7 +147,7 @@ export class DashboardComponent implements OnInit {
         datasets: [
             {
                 label: 'Temps de visionnage de cette semaine',
-                data: [2, 4, 0, 3, 2, 1, 3],
+                data: [2, 4, 1, 0, 0, 0, 0],
                 fill: false,
                 backgroundColor: '#28D850',
                 borderColor: '#28D850'
@@ -191,7 +191,7 @@ export class DashboardComponent implements OnInit {
       datasets: [
           {
               label: 'Ouverture des volets',
-              data: [1, 3, 3, 2, 4, 1, 1],
+              data: [1, 3, 3, 0, 0, 0, 0],
               fill: false,
               backgroundColor: '#33CC33',
               borderColor: '#33CC33'
@@ -221,7 +221,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.http.get('http://localhost:3000/mesurejournaliere?capteurId=1')
+    this.http.get('http://localhost:8080/back-prevhold/mesurejournaliere?capteurId=1')
     .subscribe( resp => {
       console.log(resp)
       for(let i in resp){
