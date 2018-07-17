@@ -1,16 +1,4 @@
-package guru.springframework;
-
-import guru.springframework.domain.Contact;
-import guru.springframework.domain.Capteur;
-
-import guru.springframework.domain.Mesure;
-import guru.springframework.repositories.CapteurRepository;
-import guru.springframework.repositories.MesureRepository;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+/*package guru.springframework;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -22,10 +10,30 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-@RunWith(SpringRunner.class)
+import guru.springframework.domain.Capteur;
+import guru.springframework.domain.Mesure;
+import guru.springframework.dto.JournaliereMesure;
+import guru.springframework.dto.MensuelleMesure;
+import guru.springframework.repositories.CapteurRepository;
+import guru.springframework.repositories.MesureRepository;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.test.context.junit4.SpringRunner;*/
+
+/**
+ * Classe de tests unitaires pour tester les services
+ *
+ */
+/*@RunWith(SpringRunner.class)
 @SpringBootTest
+@EnableScheduling
 public class SpringBootMariaDBApplicationTests {
     private static final int RASPBERRY_ID = 1234;
+    // Format attendu dans le fichier de test permettant de charger des données d'exemple dans la base de données
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
 
@@ -36,19 +44,43 @@ public class SpringBootMariaDBApplicationTests {
     private MesureRepository mesureRepo;
 
     @Test
+    public void testMesureParJour() {
+        String capteurId = "1";
+        int seuil = 75;
+        List<JournaliereMesure> mesures = mesureRepo.getByCapteurByJour(capteurId, seuil);
+        for (JournaliereMesure mesure : mesures) {
+            System.out.println(mesure);
+        }
+    }
+
+    @Test
+    public void testMesureParMois() {
+        String capteurId = "1";
+        int seuil = 75;
+        List<MensuelleMesure> mesures = mesureRepo.getByCapteurByMois(capteurId, seuil);
+        for (MensuelleMesure mesure : mesures) {
+            System.out.println(mesure);
+        }
+    }
+
+    @Test
     public void testImport() throws IOException {
-        String mesureCSVFile = "C:\\Users\\asus\\Desktop\\mesure.csv";
-
+        // Récupère le fichier depuis le chemin de la classe (évite un chemin en dur
+        // dépendant de la plate-forme)
+        String mesureCSVFile = getClass().getResource("mesure.csv").getFile();
         parseCSV(mesureCSVFile);
-
     }
 
     @Test
     public void doucheImport() throws IOException {
-        String mesureCSVFile = "C:\\Users\\asus\\Desktop\\doucheMesure.txt";
-
+        // Récupère le fichier depuis le chemin de la classe (évite un chemin en dur
+        // dépendant de la plate-forme)
+        String mesureCSVFile = getClass().getResource("doucheMesure.txt").getFile();
         parseCSV(mesureCSVFile);
+    }
 
+    @Test
+    public void contextLoads() {
     }
 
     private void parseCSV(String mesureCSVFile) throws IOException {
@@ -95,8 +127,4 @@ public class SpringBootMariaDBApplicationTests {
         mesureRepo.save(mesure);
     }
 
-    @Test
-    public void contextLoads() {
-    }
-
-}
+}*/
